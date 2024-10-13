@@ -1,9 +1,6 @@
-
----
-
 # 3D Image Construction - Frontend
 
-This is the frontend component of the 3D Image Construction project. It is built using **React** and serves as the user interface for interacting with the backend microservices. Users can upload 2D images, view the 3D constructed models, and interact with various features provided by the system.
+This is the frontend component of the **3D Image Construction** project. It is built using **React** and serves as the user interface for interacting with the backend microservices. Users can upload 2D images, view the 3D constructed models, and interact with various features provided by the system.
 
 ## Table of Contents
 
@@ -25,6 +22,7 @@ This is the frontend component of the 3D Image Construction project. It is built
 - Integration with backend microservices via API Gateway
 - Real-time rendering of 3D models
 - Responsive design for desktop and mobile devices
+- Upload and preview multiple images or ZIP files containing images
 
 ## Getting Started
 
@@ -38,9 +36,8 @@ This is the frontend component of the 3D Image Construction project. It is built
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/3d-image-construction-frontend.git
+   git clone https://github.com/premoswal/3d-image-construction-frontend.git
    cd 3d-image-construction-frontend
-   ```
 
 2. Install dependencies:
    ```bash
@@ -114,5 +111,3 @@ You can build and run the frontend using Docker for consistent deployment.
 3. Commit your changes (`git commit -m 'Add your feature'`)
 4. Push to the branch (`git push origin feature/your-feature`)
 5. Open a Pull Request
-
----

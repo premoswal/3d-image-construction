@@ -1,38 +1,188 @@
+/* App.css */
+
+/* Base styles for the application */
 .App {
   text-align: center;
+  transition: background-color 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dark-theme {
+  background-color: #121212;
+  color: #f5f5f5;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.light-theme {
+  background-color: #f0f2f5;
+  color: #333;
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 18px;
+  padding: 20px;
+}
+
+/* Styling for the theme toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
   color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.theme-toggle:hover {
+  background-color: #45a049;
 }
 
-@keyframes App-logo-spin {
+/* Drag and drop area styling */
+.drag-drop-area {
+  border: 2px dashed #888;
+  padding: 20px;
+  margin: 20px 0;
+  width: 80%;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: border-color 0.3s;
+}
+
+.drag-drop-area:hover {
+  border-color: #aaa;
+}
+
+/* Styling for file input */
+input[type="file"] {
+  margin-bottom: 10px;
+}
+
+/* Button styles */
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Progress bar styling */
+.progress-bar {
+  width: 80%;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.progress {
+  height: 20px;
+  background-color: #4caf50;
+  transition: width 0.3s;
+}
+
+.upload-status {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Image Preview Styling */
+.image-preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+  gap: 10px; /* Space between the images */
+  justify-items: center; /* Center the images horizontally */
+  max-width: 90%;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #1e1e1e;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.preview-image {
+  width: 100%; /* Make images responsive within grid */
+  max-width: 250px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  perspective: 1000px; /* Set perspective to create a 3D effect */
+}
+
+/* Pop effect for image hover, remove any screen shake */
+.preview-image:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content-wrapper {
+  max-width: 80%;
+  max-height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
   from {
-    transform: rotate(0deg);
+    transform: scale(0.5);
   }
   to {
-    transform: rotate(360deg);
+    transform: scale(1);
   }
+}
+
+/* Hide scrollbars */
+.image-preview::-webkit-scrollbar {
+  display: none;
+}
+
+.image-preview {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
 }
