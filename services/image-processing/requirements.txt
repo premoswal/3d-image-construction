@@ -1,0 +1,3 @@
+fastapi
+uvicorn
+pillow  # Python Imaging Library for basic image processing tasks
