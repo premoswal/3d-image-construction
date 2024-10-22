@@ -1,0 +1,3 @@
+s3:
+  bucket_name: your-s3-bucket-name
+  region: your-region

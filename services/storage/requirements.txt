@@ -1,0 +1,4 @@
+fastapi
+boto3           # For AWS S3 integration
+uvicorn
+pydantic        # For data validation and configuration
